@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit{
   
   title = 'Todo Application in Angular';
-  tasklist: any[] = [];
+  tasklist: string[] = [];
   searchtask: string;
   
 
