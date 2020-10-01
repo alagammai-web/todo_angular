@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit{
   
   title = 'Todo Application in Angular';
-  tasklist: any[] = [];
+  tasklist: string[] = [];
   searchtask: string;
   
 
@@ -16,13 +16,13 @@ export class AppComponent implements OnInit{
     this.tasklist = JSON.parse(localStorage.getItem('taskvalue'));
   }
 
-  addtodo(d){
+  addtodo(d: string){
     this.tasklist.push(d);
     localStorage.setItem('taskvalue', JSON.stringify(this.tasklist));
   }
 
-  deletetodo(i){
-    this.tasklist.splice(i,1);
+  deletetodo(i: number){
+    this.tasklist.splice(i, 1);
     localStorage.setItem('taskvalue', JSON.stringify(this.tasklist));
   }
 }
