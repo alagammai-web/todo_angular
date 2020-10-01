@@ -16,6 +16,7 @@
         <h2 *ngIf="!tasklist.length">No task assigned.. create one..</h2>
        
        <!-- filter -->
+       <div *ngIf="tasklist.length">
        <div class="col-sm-12 filter">
 <input type="text" placeholder="Search Task..." [(ngModel)]="searchtask">
        </div>
@@ -25,6 +26,8 @@
             <button (click)="deletetodo(i)" class="trash">Delete</button>
           </li>
         </ul>
+      </div>
+      
       </div>
     </div>
   </div>
