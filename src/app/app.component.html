@@ -12,11 +12,11 @@
       </div>
      
       <div class="col-sm-12">
-        <h2 *ngIf="tasklist.length">My Current Task ({{ tasklist.length }})</h2>
-        <h2 *ngIf="!tasklist.length">No task assigned.. create one..</h2>
+        <h2 *ngIf="tasklist?.length">My Current Task ({{ tasklist.length }})</h2>
+        <h2 *ngIf="!tasklist?.length">No task assigned.. create one..</h2>
        
        <!-- filter -->
-       <div *ngIf="tasklist.length">
+       <div *ngIf="tasklist?.length">
        <div class="col-sm-12 filter">
 <input type="text" placeholder="Search Task..." [(ngModel)]="searchtask">
        </div>
@@ -27,7 +27,7 @@
           </li>
         </ul>
       </div>
-      
+
       </div>
     </div>
   </div>
