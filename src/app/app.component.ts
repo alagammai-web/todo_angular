@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit{
   
   title = 'Todo Application in Angular';
-  tasklist: String[] = [];
+  tasklist: string[] = [];
   searchtask: string;
   
 
@@ -17,7 +17,7 @@ export class AppComponent implements OnInit{
   }
 
   addtodo(d: string){
-    this.tasklist.push(d);
+    this.tasklist.unshift(d);
     localStorage.setItem('taskvalue', JSON.stringify(this.tasklist));
   }
 
