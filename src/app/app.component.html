@@ -1,0 +1,31 @@
+<div class="container text-center mt-5 mb-5">
+  <div class="card">
+    <div class="card-header">
+      <h1>{{title}}</h1>
+    </div>
+    <div class="card-body">
+      <div class="col-sm-12 search_option">
+        <input type="text" placeholder="Enter Todo" id="todoname" name="todoname" #newTask>
+        <div class="col-sm-12 mt-3">
+          <button type="submit" (click)="addtodo(newTask.value)" class="add">Add</button>
+        </div>
+      </div>
+     
+      <div class="col-sm-12">
+        <h2 *ngIf="tasklist.length">My Current Task ({{ tasklist.length }})</h2>
+        <h2 *ngIf="!tasklist.length">No task assigned.. create one..</h2>
+       
+       <!-- filter -->
+       <div class="col-sm-12 filter">
+<input type="text" placeholder="Search Task..." [(ngModel)]="searchtask">
+       </div>
+        <ul class="list-unstyled mt-3">
+          <li  *ngFor="let taskname of tasklist | filterpipe: searchtask; let i = index;">
+            <span>{{taskname}}</span>
+            <button (click)="deletetodo(i)" class="trash">Delete</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
