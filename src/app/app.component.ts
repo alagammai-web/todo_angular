@@ -20,7 +20,9 @@ export class AppComponent implements OnInit{
   }
 
   addtodo(d: string){
-    this.tasklist.unshift(d);
+    // this.tasklist.unshift(d);
+    // this.tasklist.concat(d);
+    this.tasklist[this.tasklist.length] = d;
     this.localStorage.setItem('taskvalue', JSON.stringify(this.tasklist));
   }
 
